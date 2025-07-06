@@ -9,3 +9,10 @@ Route::get('/', function () {
 // Route::get('/api/hello', function () {
 //     return 'Hello World';
 // });
+Route::get('/test', function(){
+    return view('Test');
+});
+
+Route::get('/personForm', function () {
+    return view('personForm');
+});
