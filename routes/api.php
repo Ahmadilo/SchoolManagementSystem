@@ -3,6 +3,7 @@
 use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use App\Http\Controllers\UserController;
 use App\Models\Person;
 
@@ -38,7 +39,7 @@ Route::post('/person', [PersonController::class, 'store'])->name('person.store')
 
 Route::get('/person', [PersonController::class, 'index']);
 
-Route::put('/person/{id}', [PersonController::class, 'update']);
+Route::put('/person/{id}', [PersonController::class, 'update'])->name('person.update', ['id' => '[0-9]+']);
 
 Route::get('/person/{id}', [PersonController::class, 'show']);
 

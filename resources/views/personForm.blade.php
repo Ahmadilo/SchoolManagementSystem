@@ -19,9 +19,9 @@
         </div>
     @endif
 
-    <form action="{{ route('person.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('person.update', ['id' => 2]) }}" method="POST" enctype="multipart/form-data">
         @csrf
-
+        @method('PUT')
 
         <label>First Name:</label><br>
         <input type="text" name="first_name" value="{{ old('first_name') }}" required><br><br>
