@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StaffController;
 use App\Models\Person;
 
 Route::get('/hello', function () {
@@ -44,3 +46,20 @@ Route::put('/person/{id}', [PersonController::class, 'update'])->name('person.up
 Route::get('/person/{id}', [PersonController::class, 'show']);
 
 Route::delete('/person/{id}', [PersonController::class, 'destroy']);
+
+// Student Routes
+
+Route::get('students', [StudentController::class, 'index']);
+Route::get('students/{id}', [StudentController::class, 'show']);
+Route::post('students', [StudentController::class, 'store']);
+Route::put('students/{id}', [StudentController::class, 'update']);
+Route::delete('students/{id}', [StudentController::class, 'destroy']);
+
+// Staff Routes
+
+
+Route::get('staffs', [StaffController::class, 'index']);
+Route::get('staffs/{id}', [StaffController::class, 'show']);
+Route::post('staffs', [StaffController::class, 'store']);
+Route::put('staffs/{id}', [StaffController::class, 'update']);
+Route::delete('staffs/{id}', [StaffController::class, 'destroy']);
