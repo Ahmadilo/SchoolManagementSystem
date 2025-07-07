@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\ClassController;
 use App\Models\Person;
 
 Route::get('/hello', function () {
@@ -72,3 +74,19 @@ Route::get('teachers/{id}', [TeacherController::class, 'show']);
 Route::post('teachers', [TeacherController::class, 'store']);
 Route::put('teachers/{id}', [TeacherController::class, 'update']);
 Route::delete('teachers/{id}', [TeacherController::class, 'destroy']);
+
+// Subject Routes
+
+Route::get('subjects', [SubjectController::class, 'index']);
+Route::get('subjects/{id}', [SubjectController::class, 'show']);
+Route::post('subjects', [SubjectController::class, 'store']);
+Route::put('subjects/{id}', [SubjectController::class, 'update']);
+Route::delete('subjects/{id}', [SubjectController::class, 'destroy']);
+
+// Subject Routes
+
+Route::get('classes', [ClassController::class, 'index']);
+Route::get('classes/{id}', [ClassController::class, 'show']);
+Route::post('classes', [ClassController::class, 'store']);
+Route::put('classes/{id}', [ClassController::class, 'update']);
+Route::delete('classes/{id}', [ClassController::class, 'destroy']);
