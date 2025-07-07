@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\App;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\TeacherController;
 use App\Models\Person;
 
 Route::get('/hello', function () {
@@ -63,3 +64,11 @@ Route::get('staffs/{id}', [StaffController::class, 'show']);
 Route::post('staffs', [StaffController::class, 'store']);
 Route::put('staffs/{id}', [StaffController::class, 'update']);
 Route::delete('staffs/{id}', [StaffController::class, 'destroy']);
+
+// Teacher Routes
+
+Route::get('teachers', [TeacherController::class, 'index']);
+Route::get('teachers/{id}', [TeacherController::class, 'show']);
+Route::post('teachers', [TeacherController::class, 'store']);
+Route::put('teachers/{id}', [TeacherController::class, 'update']);
+Route::delete('teachers/{id}', [TeacherController::class, 'destroy']);
