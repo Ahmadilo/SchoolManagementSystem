@@ -9,19 +9,9 @@ return new class extends Migration
 {   
     public function up(): void
     {
-        Schema::create('users2', function (Blueprint $table) {
-            $table->id();
-            $table->string('username', 50)->unique();
-            $table->string('password', 100);
-            $table->string('role', 20); // Admin, Teacher, Student, Parent
-            $table->dateTime('last_login')->nullable();
-            $table->boolean('is_active')->default(true);
-            $table->timestamps();
-        });
-
         Schema::create('persons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained('users2');
+            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->string('first_name', 50);
             $table->string('last_name', 50);
             $table->date('date_of_birth')->nullable();
