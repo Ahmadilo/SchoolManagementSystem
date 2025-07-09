@@ -10,6 +10,11 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassSubjectController;
+use App\Http\Controllers\StudentClassController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\GradeController;
+use App\Http\Controllers\NotificationController;
 use App\Models\Person;
 
 Route::get('/hello', function () {
@@ -90,3 +95,43 @@ Route::get('classes/{id}', [ClassController::class, 'show']);
 Route::post('classes', [ClassController::class, 'store']);
 Route::put('classes/{id}', [ClassController::class, 'update']);
 Route::delete('classes/{id}', [ClassController::class, 'destroy']);
+
+// Class Subjects Routes
+
+Route::get('class-subjects', [ClassSubjectController::class, 'index']);
+Route::get('class-subjects/{id}', [ClassSubjectController::class, 'show']);
+Route::post('class-subjects', [ClassSubjectController::class, 'store']);
+Route::put('class-subjects/{id}', [ClassSubjectController::class, 'update']);
+Route::delete('class-subjects/{id}', [ClassSubjectController::class, 'destroy']);
+
+// Student Classes Routes
+
+Route::get('student-classes', [StudentClassController::class, 'index']);
+Route::get('student-classes/{id}', [StudentClassController::class, 'show']);
+Route::post('student-classes', [StudentClassController::class, 'store']);
+Route::put('student-classes/{id}', [StudentClassController::class, 'update']);
+Route::delete('student-classes/{id}', [StudentClassController::class, 'destroy']);
+
+// Attendance Routes
+
+Route::get('attendance', [AttendanceController::class, 'index']);
+Route::get('attendance/{id}', [AttendanceController::class, 'show']);
+Route::post('attendance', [AttendanceController::class, 'store']);
+Route::put('attendance/{id}', [AttendanceController::class, 'update']);
+Route::delete('attendance/{id}', [AttendanceController::class, 'destroy']);
+
+// Grade Routes
+
+Route::get('grades', [GradeController::class, 'index']);
+Route::get('grades/{id}', [GradeController::class, 'show']);
+Route::post('grades', [GradeController::class, 'store']);
+Route::put('grades/{id}', [GradeController::class, 'update']);
+Route::delete('grades/{id}', [GradeController::class, 'destroy']);
+
+// notifiction Routes not Test eite
+
+Route::get('notifications', [NotificationController::class, 'index']);
+Route::get('notifications/{id}', [NotificationController::class, 'show']);
+Route::post('notifications', [NotificationController::class, 'store']);
+Route::put('notifications/{id}', [NotificationController::class, 'update']);
+Route::delete('notifications/{id}', [NotificationController::class, 'destroy']);
